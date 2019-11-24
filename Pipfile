@@ -7,6 +7,7 @@ verify_ssl = true
 
 [packages]
 molecule = {extras = ["docker"],version = "*"}
+importlib-metadata = "*"
 
 [requires]
 python_version = "3.8"
