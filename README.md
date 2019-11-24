@@ -4,6 +4,7 @@
      instead have a look at the files in the ./meta/ directory. -->
 
 [![Platforms](http://img.shields.io/badge/platforms-debian%20/%20ubuntu-lightgrey.svg?style=flat)](#)
+![Travis (.com) branch](https://api.travis-ci.org/thiagoalmeidasa/ansible-role-aws-ecr-credential-helper.svg?branch=master)
 
 
 
@@ -25,7 +26,7 @@ aws_ecr_credential_helper_version: 0.3.1
 
 `aws-ecr-credential-helper` role was written by:
 
-- [Thiago Almeida](thiagoalmeida.xyz) | [e-mail](mailto:thiagoalmeidasa@gmail.com) | [Twitter](https://twitter.com/thiagoalmeidasa)
+- [Thiago Almeida](thiagoalmeida.xyz)
 
 License: [MIT](https://tldrlegal.com/license/mit-license)
 
