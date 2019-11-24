@@ -2,6 +2,7 @@
 galaxy_info:
   author: Thiago Almeida
   description: Ansible role for aws-ecr-credential-helper
+  role_name: aws-ecr-credential-helper
 
   issue_tracker_url: http://github.com/thiagoalmeidasa/aws-ecr-credential-helper/issues
   license: MIT
