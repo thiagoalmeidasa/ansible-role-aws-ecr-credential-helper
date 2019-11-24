@@ -18,6 +18,12 @@ install:
   # Install test dependencies.
   - pipenv install
 
+before_script:
+  # Use actual Ansible Galaxy role name for the project directory.
+  - cd ../
+  - mv ansible-role-$ROLE_NAME thiagoalmeidasa.$ROLE_NAME
+  - cd thiagoalmeidasa.$ROLE_NAME
+
 script:
   # Run tests.
   - molecule test
