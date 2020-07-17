@@ -9,6 +9,7 @@ verify_ssl = true
 molecule = {extras = ["docker"],version = "*"}
 importlib-metadata = "*"
 pytest = "*"
+ansible-lint = "*"
 
 [requires]
 python_version = "3.8"
