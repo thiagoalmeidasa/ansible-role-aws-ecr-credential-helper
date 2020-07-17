@@ -21,6 +21,7 @@ galaxy_info:
     - bionic
     - disco
     - eoan
+    - focal
 
   galaxy_tags:
   - aws
@@ -28,3 +29,4 @@ galaxy_info:
   - ecr
 
   travis: true
+  id: 44886

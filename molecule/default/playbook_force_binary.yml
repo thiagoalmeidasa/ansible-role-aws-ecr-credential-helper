@@ -1,0 +1,9 @@
+---
+- name: Converge
+  hosts: all
+  become: true
+
+  roles:
+  - role: thiagoalmeidasa.aws-ecr-credential-helper
+    vars:
+      install_from_binary: true

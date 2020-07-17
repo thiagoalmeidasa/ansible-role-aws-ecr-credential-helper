@@ -13,12 +13,29 @@ env:
     - ROLE_NAME: aws-ecr-credential-helper
   matrix:
     - MOLECULE_DISTRO: debian:8
+    - MOLECULE_DISTRO: debian:8
+      MOLECULE_PLAYBOOK: playbook_force_binary.yml
     - MOLECULE_DISTRO: debian:9
+    - MOLECULE_DISTRO: debian:9
+      MOLECULE_PLAYBOOK: playbook_force_binary.yml
     - MOLECULE_DISTRO: debian:10
+    - MOLECULE_DISTRO: debian:10
+      MOLECULE_PLAYBOOK: playbook_force_binary.yml
     - MOLECULE_DISTRO: ubuntu:16.04
+    - MOLECULE_DISTRO: ubuntu:16.04
+      MOLECULE_PLAYBOOK: playbook_force_binary.yml
     - MOLECULE_DISTRO: ubuntu:18.04
+    - MOLECULE_DISTRO: ubuntu:18.04
+      MOLECULE_PLAYBOOK: playbook_force_binary.yml
     - MOLECULE_DISTRO: ubuntu:19.04
+    - MOLECULE_DISTRO: ubuntu:19.04
+      MOLECULE_PLAYBOOK: playbook_force_binary.yml
     - MOLECULE_DISTRO: ubuntu:19.10
+    - MOLECULE_DISTRO: ubuntu:19.10
+      MOLECULE_PLAYBOOK: playbook_force_binary.yml
+    - MOLECULE_DISTRO: ubuntu:20.04
+    - MOLECULE_DISTRO: ubuntu:20.04
+      MOLECULE_PLAYBOOK: playbook_force_binary.yml
 
 install:
   # Install test dependencies.
