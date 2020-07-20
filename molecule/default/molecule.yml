@@ -3,22 +3,14 @@ dependency:
   name: galaxy
 driver:
   name: docker
-lint:
-  name: yamllint
-  options:
-    config-file: ./.yamllint
+lint: |
+  set -e
+  yamllint .
+  ansible-lint
 platforms:
 - name: instance
   image: ${MOLECULE_DISTRO:-ubuntu:19.04}
 provisioner:
   name: ansible
-  lint:
-    name: ansible-lint
   playbooks:
-    converge: ${MOLECULE_PLAYBOOK:-playbook.yml}
-scenario:
-  name: default
-verifier:
-  name: testinfra
-  lint:
-    name: flake8
+    converge: ${MOLECULE_PLAYBOOK:-converge.yml}

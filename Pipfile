@@ -6,7 +6,7 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-molecule = {extras = ["docker"],version = "==2.22"}
+molecule = {extras = ["docker"],version = "*"}
 importlib-metadata = "*"
 pytest = "*"
 ansible-lint = "*"
