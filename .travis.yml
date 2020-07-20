@@ -27,9 +27,6 @@ env:
     - MOLECULE_DISTRO: ubuntu:18.04
     - MOLECULE_DISTRO: ubuntu:18.04
       MOLECULE_PLAYBOOK: playbook_force_binary.yml
-    - MOLECULE_DISTRO: ubuntu:19.04
-    - MOLECULE_DISTRO: ubuntu:19.04
-      MOLECULE_PLAYBOOK: playbook_force_binary.yml
     - MOLECULE_DISTRO: ubuntu:19.10
     - MOLECULE_DISTRO: ubuntu:19.10
       MOLECULE_PLAYBOOK: playbook_force_binary.yml
