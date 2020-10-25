@@ -9,7 +9,7 @@ lint: |
   ansible-lint
 platforms:
 - name: instance
-  image: ${MOLECULE_DISTRO:-ubuntu:19.04}
+  image: ${MOLECULE_DISTRO:-ubuntu:20.04}
 provisioner:
   name: ansible
   playbooks:
