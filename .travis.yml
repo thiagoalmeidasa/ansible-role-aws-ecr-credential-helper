@@ -33,6 +33,9 @@ env:
     - MOLECULE_DISTRO: ubuntu:20.04
     - MOLECULE_DISTRO: ubuntu:20.04
       MOLECULE_PLAYBOOK: playbook_force_binary.yml
+    - MOLECULE_DISTRO: ubuntu:20.10
+    - MOLECULE_DISTRO: ubuntu:20.10
+      MOLECULE_PLAYBOOK: playbook_force_binary.yml
 
 install:
   # Install test dependencies.
