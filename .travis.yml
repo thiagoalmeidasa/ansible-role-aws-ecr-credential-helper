@@ -46,7 +46,7 @@ before_script:
 
 script:
   # Run tests.
-  - pipenv run molecule test
+  - pipenv run molecule --debug test
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
