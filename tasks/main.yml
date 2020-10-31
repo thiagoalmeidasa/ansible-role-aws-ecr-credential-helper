@@ -1,5 +1,5 @@
 ---
-- name: Include installation tasks for Debian Buster and Ubuntu Disco Dingo
+- name: Include installation tasks for Debian Buster, Ubuntu Disco Dingo or newer
   include: install-from-package.yml
   when: ((ansible_facts['distribution'] == 'Debian' and ansible_facts['distribution_major_version'] is version('10', '>=')) or
         (ansible_facts['distribution'] == 'Ubuntu' and ansible_facts['distribution_major_version'] is version('19', '>='))) and
