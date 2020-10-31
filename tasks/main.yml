@@ -10,3 +10,7 @@
   when: (ansible_facts['distribution'] == 'Debian' and ansible_facts['distribution_major_version'] is version('9', '<=')) or
         (ansible_facts['distribution'] == 'Ubuntu' and ansible_facts['distribution_major_version'] is version('18.04', '<=')) or
         (install_from_binary)
+
+- name: Include docker config tasks
+  include: configure-docker-json.yml
+  when: cred_helper_config.keys() | length > 0

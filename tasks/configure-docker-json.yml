@@ -1,0 +1,33 @@
+---
+- name: Creates docker config directory
+  file:
+    path: "{{ ansible_user_dir }}/.docker/"
+    state: directory
+    owner: '{{ ansible_user_id }}'
+    group: '{{ ansible_user_uid }}'
+    mode: '0655'
+
+- name: Check that docker config exists
+  stat:
+    path: '{{ ansible_user_dir }}/.docker/config.json'
+  register: stat_result
+
+- name: Read docker config json file
+  slurp:
+    src: '{{ ansible_user_dir }}/.docker/config.json'
+  register: imported_var
+  when: stat_result.stat.exists
+
+- name: Set fact original_content
+  set_fact:
+    original_content: "{{ imported_var.content | b64decode | from_json if imported_var.content is defined else {} }}"
+
+- name: Add cred_helper_config to docker config json object
+  set_fact:
+    result_var: "{{ original_content | combine(cred_helper_config | to_json | from_json) }}"
+
+- name: Write var to file
+  copy:
+    content: "{{ result_var | to_nice_json }}"
+    dest: '{{ ansible_user_dir }}/.docker/config.json'
+    mode: '0600'
