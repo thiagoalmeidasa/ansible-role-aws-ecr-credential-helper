@@ -4,12 +4,14 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+pylint = "*"
 
 [packages]
-molecule = {extras = ["docker"],version = "*"}
-importlib-metadata = "*"
+molecule = {extras = ["docker"],version = ">=3.0"}
 pytest = "*"
 ansible-lint = "*"
+ansible = ">=2.10"
+testinfra = "*"
 
 [requires]
 python_version = "3.8"

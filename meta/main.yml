@@ -21,6 +21,7 @@ galaxy_info:
     - bionic
     - eoan
     - focal
+    - groovy
 
   galaxy_tags:
   - aws
