@@ -12,9 +12,6 @@ env:
   global:
     - ROLE_NAME: aws-ecr-credential-helper
   matrix:
-    - MOLECULE_DISTRO: debian:8
-    - MOLECULE_DISTRO: debian:8
-      MOLECULE_PLAYBOOK: playbook_force_binary.yml
     - MOLECULE_DISTRO: debian:9
     - MOLECULE_DISTRO: debian:9
       MOLECULE_PLAYBOOK: playbook_force_binary.yml
