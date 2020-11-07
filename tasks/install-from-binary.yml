@@ -1,8 +1,13 @@
 ---
+- name: Uninstall amazon-ecr-credential-helper from package
+  package:
+    name: "{{ aws_ecr_cred_helper_pkg }}"
+    state: absent
+
 # https://github.com/awslabs/amazon-ecr-credential-helper/releases
 - name: Install amazon-ecr-credential-helper from binary
   get_url:
     url: https://amazon-ecr-credential-helper-releases.s3.us-east-2.amazonaws.com/{{
-      aws_ecr_credential_helper_version }}/linux-amd64/docker-credential-ecr-login
+      aws_ecr_cred_helper_bin_version }}/linux-amd64/docker-credential-ecr-login
     dest: /usr/local/bin/docker-credential-ecr-login
     mode: '0755'

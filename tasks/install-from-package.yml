@@ -7,5 +7,5 @@
 
 - name: Install amazon-ecr-credential-helper from package
   package:
-    name: amazon-ecr-credential-helper
+    name: "{{ aws_ecr_cred_helper_pkg }}"
     state: present

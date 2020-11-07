@@ -1,0 +1,45 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: true
+  become: true
+
+  pre_tasks:
+    - name: Include default vars from role
+      include_vars:
+        dir: ../../defaults
+        extensions:
+          - 'yaml'
+          - 'yml'
+
+    - name: Include test vars
+      include_vars:
+        dir: vars/
+        extensions:
+          - 'yaml'
+          - 'yml'
+
+  tasks:
+    - name: Credential client helper version
+      shell: command -p docker-credential-ecr-login version
+      register: check_in_path_result
+
+    - name: Assert credential helper version
+      assert:
+        that:
+          - check_in_path_result is succeeded
+          - check_in_path_result.stdout is version('0.6', '>=')
+        success_msg: Credential helper version is correct
+        fail_msg: Wrong credential helper version
+
+    - name: Gather the package facts
+      package_facts:
+        manager: auto
+
+    - name: Assert credential helper pkg version
+      assert:
+        that:
+          - ansible_facts.packages[aws_ecr_cred_helper_pkg][0]['version'] is version ('0.3', '>=')
+        success_msg: Pkg version is correct
+        fail_msg: Wrong pkg version
+      when: not install_from_binary

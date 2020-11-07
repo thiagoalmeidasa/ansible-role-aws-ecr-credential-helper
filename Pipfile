@@ -7,11 +7,10 @@ verify_ssl = true
 pylint = "*"
 
 [packages]
-molecule = {extras = ["docker"],version = ">=3.0"}
-pytest = "*"
-ansible-lint = "*"
-ansible = ">=2.10"
-testinfra = "*"
+molecule = "~=3.1.5"
+molecule-docker = "~=0.2.0"
+ansible-lint = "~=4.3.0"
+ansible = ">=2.10*"
 
 [requires]
 python_version = "3.8"

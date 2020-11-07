@@ -1,16 +1,18 @@
 ---
-- name: Include installation tasks for Debian Buster, Ubuntu Disco Dingo or newer
-  include_tasks: install-from-package.yml
-  when: ((ansible_facts['distribution'] == 'Debian' and ansible_facts['distribution_major_version'] is version('10', '>=')) or
-        (ansible_facts['distribution'] == 'Ubuntu' and ansible_facts['distribution_major_version'] is version('19', '>='))) and
-        not install_from_binary
+- name: Set installation method
+  set_fact:
+    install_from_binary: true
+  when: ansible_facts['distribution'] == 'Ubuntu' and
+        ansible_facts['distribution_major_version'] is version('18.04', '<=')
 
-- name: Include installation tasks Debian Stretch, Ubuntu Bionic Beaver or older
+- name: Include install from package tasks
+  include_tasks: install-from-package.yml
+  when: not install_from_binary
+
+- name: Include install from binary tasks
   include_tasks: install-from-binary.yml
-  when: (ansible_facts['distribution'] == 'Debian' and ansible_facts['distribution_major_version'] is version('9', '<=')) or
-        (ansible_facts['distribution'] == 'Ubuntu' and ansible_facts['distribution_major_version'] is version('18.04', '<=')) or
-        (install_from_binary)
+  when: install_from_binary
 
 - name: Include docker config tasks
   include_tasks: configure-docker-json.yml
-  when: cred_helper_config.keys() | length > 0
+  when: cred_helper_config is defined and cred_helper_config.keys() | length > 0
