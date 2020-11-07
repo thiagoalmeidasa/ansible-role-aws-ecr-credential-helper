@@ -21,8 +21,10 @@
 
   tasks:
     - name: Credential client helper version
-      shell: command -p docker-credential-ecr-login version
+      shell:  # noqa 305
+        cmd: command -p docker-credential-ecr-login version
       register: check_in_path_result
+      changed_when: false
 
     - name: Assert credential helper version
       assert:
