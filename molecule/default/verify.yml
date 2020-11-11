@@ -22,7 +22,7 @@
   tasks:
     - name: Credential client helper version
       shell:  # noqa 305
-        cmd: command -p docker-credential-ecr-login version
+        cmd: command docker-credential-ecr-login version
       register: check_in_path_result
       changed_when: false
 
@@ -37,6 +37,7 @@
     - name: Gather the package facts
       package_facts:
         manager: auto
+      when: not install_from_binary
 
     - name: Assert credential helper pkg version
       assert:
@@ -44,4 +45,4 @@
           - ansible_facts.packages[aws_ecr_cred_helper_pkg][0]['version'] is version ('0.3', '>=')
         success_msg: Pkg version is correct
         fail_msg: Wrong pkg version
-      when: not install_from_binary
+      when: not install_from_binary and 'aws_ecr_cred_helper_pkg' in ansible_facts.packages
