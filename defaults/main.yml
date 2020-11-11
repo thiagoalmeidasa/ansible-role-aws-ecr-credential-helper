@@ -1,6 +1,7 @@
 ---
-aws_ecr_credential_helper_version: 0.4.0
+aws_ecr_cred_helper_bin_version: 0.4.0
+aws_ecr_cred_helper_pkg: "amazon-ecr-credential-helper"
 install_from_binary: false
 
-cred_helper_config:
-  credsStore: ecr-login
+# cred_helper_config: {}
+# credsStore: ecr-login

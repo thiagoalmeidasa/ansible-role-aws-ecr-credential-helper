@@ -3,5 +3,13 @@
   hosts: all
   become: true
 
-  roles:
-  - role: thiagoalmeidasa.aws-ecr-credential-helper
+  pre_tasks:
+    - name: Include default vars from role
+      include_vars:
+        dir: vars/
+        extensions:
+          - 'yaml'
+          - 'yml'
+  tasks:
+    - include_role:
+        name: thiagoalmeidasa.aws-ecr-credential-helper

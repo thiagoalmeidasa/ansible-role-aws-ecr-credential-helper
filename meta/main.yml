@@ -10,23 +10,23 @@ galaxy_info:
   min_ansible_version: 2.4
 
   platforms:
-  - name: Debian
-    versions:
-    - jessie
-    - stretch
-    - buster
-  - name: Ubuntu
-    versions:
-    - xenial
-    - bionic
-    - eoan
-    - focal
-    - groovy
+    - name: Debian
+      versions:
+        - jessie
+        - stretch
+        - buster
+    - name: Ubuntu
+      versions:
+        - xenial
+        - bionic
+        - eoan
+        - focal
+        - groovy
 
   galaxy_tags:
-  - aws
-  - docker
-  - ecr
+    - aws
+    - docker
+    - ecr
 
   travis: true
   id: 44886

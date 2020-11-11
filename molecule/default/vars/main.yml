@@ -1,0 +1,6 @@
+---
+cred_helper_config:
+  credHelpers:
+    aws_account_id.dkr.ecr.region.amazonaws.com: ecr-login
+    aws_account_iid.dkr.ecr.region.amazonaws.com: ecr-login
+    aws_accountt_id.dkr.ecr.region.amazonaws.com: ecr-login

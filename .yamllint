@@ -18,19 +18,21 @@ rules:
   commas:
     max-spaces-after: -1
     level: error
-  comments: disable
-  comments-indentation: disable
-  document-start: disable
+  comments: enable
+  comments-indentation: enable
+  document-start: enable
   empty-lines:
-    max: 3
+    max: 2
     level: error
   hyphens:
     level: error
-  indentation: disable
+  indentation: enable
   key-duplicates: enable
   line-length: disable
   new-line-at-end-of-file: disable
   new-lines:
     type: unix
-  trailing-spaces: disable
+  trailing-spaces: enable
   truthy: disable
+
+# vim: ft=yaml

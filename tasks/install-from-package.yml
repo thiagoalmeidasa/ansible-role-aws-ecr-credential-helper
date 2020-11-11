@@ -2,10 +2,9 @@
 - name: Update apt cache.
   apt:
     update_cache: yes
-    cache_valid_time: 600
   changed_when: false
 
 - name: Install amazon-ecr-credential-helper from package
   package:
-    name: amazon-ecr-credential-helper
+    name: "{{ aws_ecr_cred_helper_pkg }}"
     state: present
