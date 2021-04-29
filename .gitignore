@@ -8,3 +8,4 @@ venv/
 ENV/
 .venv/
 pytestdebug.log
+.cache
