@@ -11,5 +11,6 @@
           - 'yaml'
           - 'yml'
   tasks:
-    - include_role:
-        name: thiagoalmeidasa.aws-ecr-credential-helper
+    - name: Include role
+      include_role:
+        name: thiagoalmeidasa.aws_ecr_credential_helper
