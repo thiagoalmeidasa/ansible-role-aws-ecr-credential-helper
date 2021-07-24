@@ -5,6 +5,11 @@
   when: (ansible_facts['distribution'] == 'Debian' and ansible_facts['distribution_major_version'] is version('9', '<=')) or
         (ansible_facts['distribution'] == 'Ubuntu' and ansible_facts['distribution_major_version'] is version('18.04', '<='))
 
+- name: Set package name
+  set_fact:
+    aws_ecr_cred_helper_pkg: docker-credential-helper-ecr
+  when: ansible_facts['distribution'] == 'MacOSX'
+
 - name: Include install from package tasks
   include_tasks: install-from-package.yml
   when: not install_from_binary

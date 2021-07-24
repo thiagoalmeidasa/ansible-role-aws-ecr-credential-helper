@@ -1,7 +1,14 @@
 ---
+
+- name: Check if apt exists
+  shell: apt --version
+  register: apt_shell
+  failed_when: false
+
 - name: Update apt cache.
   apt:
     update_cache: yes
+  when: apt_shell.rc == 0
   changed_when: false
 
 - name: Install amazon-ecr-credential-helper from package
