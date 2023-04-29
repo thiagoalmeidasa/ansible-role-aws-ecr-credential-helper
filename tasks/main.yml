@@ -16,3 +16,4 @@
 - name: Include docker config tasks
   include_tasks: configure-docker-json.yml
   when: cred_helper_config is defined and cred_helper_config.keys() | length > 0
+  with_items: "{{ aws_ecr_cred_helper_docker_config_dirs }}"

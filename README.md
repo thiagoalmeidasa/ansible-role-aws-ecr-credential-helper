@@ -80,6 +80,8 @@ Role default variables from `defaults/main.yml`.
 ```yaml
 aws_ecr_cred_helper_bin_version: 0.5.0
 aws_ecr_cred_helper_pkg: "amazon-ecr-credential-helper"
+aws_ecr_cred_helper_docker_config_dirs:
+  - "{{ ansible_user_dir }}"
 install_from_binary: false
 
 # cred_helper_config: {}
