@@ -7,26 +7,24 @@ galaxy_info:
   issue_tracker_url: http://github.com/thiagoalmeidasa/aws-ecr-credential-helper/issues
   license: MIT
 
-  min_ansible_version: 2.4
+  min_ansible_version: "2.10"
 
   platforms:
     - name: Debian
       versions:
-        - jessie
         - stretch
         - buster
+        - bullseye
     - name: Ubuntu
       versions:
         - xenial
         - bionic
-        - eoan
         - focal
-        - groovy
+        - jammy
 
   galaxy_tags:
     - aws
     - docker
     - ecr
 
-  travis: true
   id: 44886
