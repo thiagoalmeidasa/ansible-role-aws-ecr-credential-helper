@@ -14,7 +14,7 @@
     state: directory
     owner: "{{ user_data.name }}"
     group: "{{ user_data.name }}"
-    mode: '775'
+    mode: '755'
 
 - name: Check if docker config exists
   stat:
