@@ -14,7 +14,7 @@
     state: directory
     owner: "{{ user_data.name }}"
     group: "{{ user_data.name }}"
-    mode: '0655'
+    mode: '775'
 
 - name: Check if docker config exists
   stat:
@@ -41,4 +41,4 @@
     dest: '{{ user_data.home }}/.docker/config.json'
     owner: "{{ user_data.name }}"
     group: "{{ user_data.name }}"
-    mode: '0600'
+    mode: '600'
