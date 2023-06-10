@@ -1,10 +1,10 @@
 ---
 - name: Update apt cache.
-  apt:
+  ansible.builtin.apt:
     update_cache: yes
   changed_when: false
 
 - name: Install amazon-ecr-credential-helper from package
-  package:
+  ansible.builtin.package:
     name: "{{ aws_ecr_cred_helper_pkg }}"
     state: present

@@ -1,19 +1,19 @@
 ---
 - name: Set installation method
-  set_fact:
+  ansible.builtin.set_fact:
     install_from_binary: true
   when: (ansible_facts['distribution'] == 'Debian' and ansible_facts['distribution_major_version'] is version('9', '<=')) or
         (ansible_facts['distribution'] == 'Ubuntu' and ansible_facts['distribution_major_version'] is version('18.04', '<='))
 
 - name: Include install from package tasks
-  include_tasks: install-from-package.yml
+  ansible.builtin.include_tasks: install-from-package.yml
   when: not install_from_binary
 
 - name: Include install from binary tasks
-  include_tasks: install-from-binary.yml
+  ansible.builtin.include_tasks: install-from-binary.yml
   when: install_from_binary
 
 - name: Include docker config tasks
-  include_tasks: configure-docker-json.yml
+  ansible.builtin.include_tasks: configure-docker-json.yml
   when: cred_helper_config is defined and cred_helper_config.keys() | length > 0
   with_items: "{{ aws_ecr_cred_helper_users }}"
